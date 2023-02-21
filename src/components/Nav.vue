@@ -1,9 +1,13 @@
 <template>
   <nav>
+    <img src="" alt="">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="/" class="link">Home</a></li>
+      <li><a href="/diensten" class="link__has--child">Diensten</a></li>
+      <li><a href="/Diensten" class="link">Partners</a></li>
+      <li><a href="/over" class="link">Over ons</a></li>
+      <li><a href="/contact" class="prm-button">Contact</a></li>
+      <li><button>Bellen</button></li>
     </ul>
     <button class="toggle">&#9776;</button>
   </nav>
@@ -32,7 +36,7 @@ ul {
 }
 
 li {
-  margin-right: 20px;
+  margin-left: 1.75rem;
 }
 
 a {
