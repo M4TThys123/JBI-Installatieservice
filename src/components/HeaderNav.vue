@@ -1,21 +1,23 @@
 <template>
-  <nav>
-    <img src="" alt="">
-    <ul>
-      <li><a href="/" class="link">Home</a></li>
-      <li><a href="/diensten" class="link__has--child">Diensten</a></li>
-      <li><a href="/Diensten" class="link">Partners</a></li>
-      <li><a href="/over" class="link">Over ons</a></li>
-      <li><a href="/contact" class="prm-button">Contact</a></li>
-      <li><button>Bellen</button></li>
-    </ul>
-    <button class="toggle">&#9776;</button>
-  </nav>
+  <header>
+    <nav>
+      <img src="" alt="">
+      <ul>
+        <li><a href="/" class="link">Home</a></li>
+        <li><a href="/diensten" class="link__has--child">Diensten</a></li>
+        <li><a href="/Diensten" class="link">Partners</a></li>
+        <li><a href="/over" class="link">Over ons</a></li>
+        <li><a href="/contact" class="prm-button">Contact</a></li>
+        <li><button>Bellen</button></li>
+      </ul>
+      <button class="toggle">&#9776;</button>
+    </nav>
+  </header>
 </template>
 
 <script>
 export default {
-  name: "Nav"
+  name: "HeaderNav"
 }
 
 </script>

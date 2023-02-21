@@ -1,15 +1,17 @@
 <template>
-  <Nav></Nav>
+
+
+  <HeaderNav></HeaderNav>
 </template>
 
 <script>
-import Nav from './components/Nav.vue'
+import HeaderNav from './components/HeaderNav.vue'
 
 
 export default {
   name: 'App',
   components: {
-    Nav
+    HeaderNav
   }
 }
 </script>
