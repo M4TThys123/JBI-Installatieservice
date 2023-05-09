@@ -1,7 +1,7 @@
 <template>
   <header :class="{ 'blur': isBlur }">
     <nav>
-      <router-link to="/" class="logo__link">
+      <router-link to="/" class="logo__link" @click="closeNav">
         <logo-s-v-g></logo-s-v-g>
       </router-link  >
 
@@ -9,7 +9,7 @@
         <ul class="nav__list"  :class="{'nav__list--open' : isNavOpen}" >
           <li class="nav__item"
               v-for="(route, index) in router().options.routes" :key="index">
-            <router-link class="nav__link" :to="route.path"> {{ route.name}}</router-link>
+            <router-link class="nav__link" :to="route.path" @click="closeNav"> {{ route.name}}</router-link>
           </li>
           <li>
             <call-button></call-button>
@@ -37,6 +37,9 @@ export default {
       console.log('click op de button')
       this.isNavOpen = !this.isNavOpen
     },
+    closeNav() {
+      this.isNavOpen = false;
+    },
     router() {
       return router
     }
@@ -45,10 +48,9 @@ export default {
     return {
       isMenuOpen: false,
       isBlur: true,
-      isNavOpen: false
+      isNavOpen: false,
     }
   },
-
 }
 
 </script>
