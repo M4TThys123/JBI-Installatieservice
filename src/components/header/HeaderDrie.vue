@@ -66,6 +66,7 @@ header{
   width: 100%;
   z-index: 999;
   padding: 0.75rem 1rem;
+  top: 0;
 
   /*padding: 1.5rem 1.875rem 1rem;*/
 }
