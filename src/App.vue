@@ -34,7 +34,10 @@ export default {
   --color-border: #E5E5E6;
   --color-border-fill: #F9F9FB;
   --color-white: #FFFFFF;
+  --dim-gray: DimGrey;
 }
+
+
 
 * {
   padding: 0;
