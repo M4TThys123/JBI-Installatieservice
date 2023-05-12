@@ -1,5 +1,8 @@
 <template>
   <Header></Header>
+<!--  <HeaderComponent01></HeaderComponent01>-->
+<!--  <HeaderComponent02></HeaderComponent02>-->
+<!--  <header-component03></header-component03>-->
 
   <main>
     <router-view class="views"/>
@@ -11,6 +14,11 @@
 <script>
 import Header from "@/components/header/Header.vue";
 import Footer from "@/components/footer/Footer.vue";
+
+// Header Iteraties
+// import HeaderComponent01 from "@/components/header/Header01.vue";
+// import HeaderComponent02 from "@/components/header/Header02.vue";
+// import HeaderComponent03 from "@/components/header/Header03.vue";
 
 
 
@@ -28,10 +36,11 @@ export default {
     }
   },
   components: {
+    // HeaderComponent03,
+    // HeaderComponent02,
+    // HeaderComponent01,
     Header,
     Footer
-    // FooterDrie,
-    // HeaderDrie
   },
 }
 </script>
