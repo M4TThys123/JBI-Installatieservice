@@ -28,9 +28,9 @@
 
 <script>
 
-import ContactView from "@/views/Contact.vue";
-import DienstenView from "@/views/Diensten.vue";
-import OverView from "@/views/Over.vue";
+import ContactView from "@/views/ContactView.vue";
+import DienstenView from "@/views/DienstenView.vue";
+import OverView from "@/views/OverView.vue";
 import PartnersView from "@/views/Partners.vue";
 
 export default {
