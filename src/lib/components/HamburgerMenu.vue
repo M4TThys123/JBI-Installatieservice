@@ -1,5 +1,5 @@
 <template>
-  <button id="ham-burger" @click="toggleNav" :class="{ 'open': isNavOpen }">
+  <button id="ham-burger" :class="{ 'open': isNavOpen }">
     <span></span>
     <span></span>
     <span></span>
@@ -8,22 +8,21 @@
 </template>
 
 <script>
-
 export default {
   name: "HamburgerMenu",
-  data() {
-    return {
-      isNavOpen: false
+  props: {
+    isNavOpen: {
+      type: Boolean,
+      required: true
     }
   },
   methods: {
     toggleNav() {
       console.log('toggle nav')
-      this.isNavOpen = !this.isNavOpen;
+      this.$emit('click');
     }
   }
 }
-
 </script>
 
 <style scoped>

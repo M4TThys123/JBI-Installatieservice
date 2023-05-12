@@ -17,7 +17,7 @@
         </ul>
       </div>
 
-      <hamburger-menu  @click="openNav" class="menu__trigger"></hamburger-menu>
+      <hamburger-menu @click="openNav" :is-nav-open="isNavOpen" class="menu__trigger"></hamburger-menu>
     </nav>
   </header>
 </template>
@@ -45,7 +45,6 @@ export default {
   },
   data() {
     return {
-      isMenuOpen: false,
       isBlur: true,
       isNavOpen: false,
     }
