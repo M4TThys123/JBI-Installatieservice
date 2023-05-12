@@ -1,21 +1,23 @@
 <template>
-  <section class="container">
-    <h1 class="mt-5 mb-3">Onze Diensten</h1>
-    <section class="row">
-      <section class="col-md-4 mb-3" v-for="service in services" :key="service.id">
-        <section class="card h-100">
+  <div class="container">
+    <h1 class="mt-5 mb-3">Our Services</h1>
+    <carousel>
+      <slide v-for="service in services" :key="service.id">
+        <div class="card h-100">
           <img :src="service.image" class="card-img-top" :alt="service.name">
-          <section class="card-body">
+          <div class="card-body">
             <h5 class="card-title">{{ service.name }}</h5>
             <p class="card-text">{{ service.description }}</p>
-          </section>
-        </section>
-      </section>
-    </section>
-  </section>
+          </div>
+        </div>
+      </slide>
+    </carousel>
+    <Carousel></Carousel>
+  </div>
 </template>
 
 <script>
+
 export default {
   name: 'DienstenView',
   data() {
