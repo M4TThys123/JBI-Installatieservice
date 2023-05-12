@@ -67,7 +67,7 @@
 
 
 export default {
-  name: "HeaderComponent",
+  name: "HeaderComponent01",
   data() {
     return {
       navToggle: false,

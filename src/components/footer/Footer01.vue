@@ -38,7 +38,7 @@
 
 <script>
 export default {
-  name: "FooterEen"
+  name: "FooterComponent01"
 }
 </script>
 

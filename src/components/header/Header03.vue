@@ -30,7 +30,7 @@ import CallButton from "@/components/CallButton.vue";
 import LogoSVG from "@/components/LogoSVG.vue";
 
 export default {
-  name: "HeaderDrie.vue",
+  name: "HeaderComponent03",
   components: {LogoSVG, CallButton, HamburgerMenu},
   methods: {
     openNav(){

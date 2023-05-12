@@ -1,17 +1,24 @@
 <template>
-  <HeaderDrie></HeaderDrie>
-    <main>
-      <router-view class="views"/>
-    </main>
+  <Header></Header>
 
-  <FooterDrie></FooterDrie>
+  <main>
+    <router-view class="views"/>
+  </main>
+
+  <Footer></Footer>
 </template>
 
 <script>
+import Header from "@/components/header/Header.vue";
+import Footer from "@/components/footer/Footer.vue";
 
 
-import HeaderDrie from "@/components/header/HeaderDrie.vue"
-import FooterDrie from "@/components/footer/FooterDrie.vue";
+
+// import HeaderDrie from "@/components/header/Header03.vue"
+// import FooterDrie from "@/components/footer/Footer03.vue";
+
+
+
 
 export default {
   name: 'App',
@@ -21,8 +28,10 @@ export default {
     }
   },
   components: {
-    FooterDrie,
-    HeaderDrie
+    Header,
+    Footer
+    // FooterDrie,
+    // HeaderDrie
   },
 }
 </script>

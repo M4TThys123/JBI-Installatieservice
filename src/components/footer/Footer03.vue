@@ -91,7 +91,7 @@ import CallButton from "@/components/CallButton.vue";
 import LogoSVG from "@/components/LogoSVG.vue";
 
 export default {
-  name: "FooterDrie",
+  name: "FooterComponent03",
   components: {LogoSVG, CallButton}
 }
 </script>

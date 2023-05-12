@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  name: "FooterTwee"
+  name: "FooterComponent02"
 }
 </script>
 

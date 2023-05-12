@@ -86,7 +86,7 @@
 import HamburgerMenu from "@/components/HamburgerMenu.vue";
 
 export default {
-  name: "HeaderTwee",
+  name: "HeaderComponent02",
   components: {HamburgerMenu},
   data() {
     return {
