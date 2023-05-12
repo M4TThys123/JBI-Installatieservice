@@ -23,14 +23,13 @@
 </template>
 
 <script>
-// import HamburgerMenu from "@/components/HamburgerMenu.vue";
-import router from '/src/router/index.js'
-import HamburgerMenu from "@/components/HamburgerMenu.vue";
-import CallButton from "@/components/CallButton.vue";
-import LogoSVG from "@/components/LogoSVG.vue";
+import LogoSVG from "@/lib/components/LogoSVG.vue";
+import CallButton from "@/lib/components/CallButton.vue";
+import HamburgerMenu from "@/lib/components/HamburgerMenu.vue";
+import router from "@/router";
 
 export default {
-  name: "HeaderComponent03",
+  name: "HeaderComponent",
   components: {LogoSVG, CallButton, HamburgerMenu},
   methods: {
     openNav(){
@@ -52,7 +51,6 @@ export default {
     }
   },
 }
-
 </script>
 
 <style scoped>
@@ -85,13 +83,13 @@ nav{
   justify-content: center;
 }
 .nav__list{
-   margin-bottom: 0;
+  margin-bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .nav__item{
-margin-right: 2em;
+  margin-right: 2em;
 }
 .logo__link{
   z-index: 999999;
@@ -164,10 +162,4 @@ margin-right: 2em;
     font-family: Inter, sans-serif;
   }
 }
-
-
-
-
-
-
 </style>

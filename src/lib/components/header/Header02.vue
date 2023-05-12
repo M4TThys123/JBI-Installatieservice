@@ -83,7 +83,7 @@
 </template>
 
 <script>
-import HamburgerMenu from "@/components/HamburgerMenu.vue";
+import HamburgerMenu from "@/lib/components/HamburgerMenu.vue";
 
 export default {
   name: "HeaderComponent02",

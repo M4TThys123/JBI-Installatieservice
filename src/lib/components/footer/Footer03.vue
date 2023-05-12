@@ -87,8 +87,8 @@
 </template>
 
 <script>
-import CallButton from "@/components/CallButton.vue";
-import LogoSVG from "@/components/LogoSVG.vue";
+import CallButton from "@/lib/components/CallButton.vue";
+import LogoSVG from "@/lib/components/LogoSVG.vue";
 
 export default {
   name: "FooterComponent03",

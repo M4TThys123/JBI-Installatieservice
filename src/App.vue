@@ -12,16 +12,13 @@
 </template>
 
 <script>
-import Header from "@/components/header/Header.vue";
-import Footer from "@/components/footer/Footer.vue";
+import Header from "@/lib/components/header/Header.vue";
+import Footer from "@/lib/components/footer/Footer.vue";
 
 // Header Iteraties
 // import HeaderComponent01 from "@/components/header/Header01.vue";
 // import HeaderComponent02 from "@/components/header/Header02.vue";
 // import HeaderComponent03 from "@/components/header/Header03.vue";
-
-
-
 // import HeaderDrie from "@/components/header/Header03.vue"
 // import FooterDrie from "@/components/footer/Footer03.vue";
 
