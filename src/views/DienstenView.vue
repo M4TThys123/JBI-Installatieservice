@@ -4,7 +4,7 @@
 
 <script>
 
-import DienstenComponent01 from "@/lib/components/diensten/DienstenComponent01.vue";
+import DienstenComponent01 from "@/lib/components/diensten/DienstenComponent02.vue";
 
 export default {
   name: 'DienstenView',

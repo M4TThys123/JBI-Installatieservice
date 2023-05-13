@@ -20,22 +20,27 @@
       </section>
     </section>
   </div>
-  <DienstenView></DienstenView>
-  <ContactView></ContactView>
+
+  <diensten-component02></diensten-component02>
+
+
   <OverView></OverView>
+
   <partners-view></partners-view>
+
+  <ContactView></ContactView>
 </template>
 
 <script>
 
 import ContactView from "@/views/ContactView.vue";
-import DienstenView from "@/views/DienstenView.vue";
 import OverView from "@/views/OverView.vue";
 import PartnersView from "@/views/Partners.vue";
+import DienstenComponent02 from "@/lib/components/diensten/DienstenComponent02.vue";
 
 export default {
   name: 'HomeView',
-  components: {PartnersView, OverView, DienstenView, ContactView},
+  components: {DienstenComponent02, PartnersView, OverView, ContactView},
   data() {
     return {
       backgroundImage: "/assets/images/hero/hero_image.png"
