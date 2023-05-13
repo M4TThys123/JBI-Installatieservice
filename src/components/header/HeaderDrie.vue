@@ -1,15 +1,14 @@
 <template>
   <header :class="{ 'blur': isBlur }">
-    <nav>
+    <nav ref="navRef">
       <router-link to="/" class="logo__link" @click="closeNav">
         <logo-s-v-g></logo-s-v-g>
-      </router-link  >
+      </router-link>
 
       <div class="nav__menu">
-        <ul class="nav__list"  :class="{'nav__list--open' : isNavOpen}" >
-          <li class="nav__item"
-              v-for="(route, index) in router().options.routes" :key="index">
-            <router-link class="nav__link" :to="route.path" @click="closeNav"> {{ route.name}}</router-link>
+        <ul class="nav__list" :class="{ 'nav__list--open': isNavOpen }">
+          <li class="nav__item" v-for="(route, index) in router().options.routes" :key="index">
+            <router-link class="nav__link" :to="route.path" @click="closeNav">{{ route.name }}</router-link>
           </li>
           <li>
             <call-button></call-button>
@@ -17,43 +16,59 @@
         </ul>
       </div>
 
-      <hamburger-menu  @click="openNav" class="menu__trigger"></hamburger-menu>
+      <hamburger-menu @click="openNav" class="menu__trigger"></hamburger-menu>
     </nav>
   </header>
 </template>
 
 <script>
 // import HamburgerMenu from "@/components/HamburgerMenu.vue";
-import router from '/src/router/index.js'
+import router from '/src/router/index.js';
 import HamburgerMenu from "@/components/HamburgerMenu.vue";
 import CallButton from "@/components/CallButton.vue";
 import LogoSVG from "@/components/LogoSVG.vue";
+import { onMounted, ref } from 'vue';
 
 export default {
   name: "HeaderDrie.vue",
-  components: {LogoSVG, CallButton, HamburgerMenu},
-  methods: {
-    openNav(){
-      console.log('click op de button')
-      this.isNavOpen = !this.isNavOpen
-    },
-    closeNav() {
-      this.isNavOpen = false;
-    },
-    router() {
-      return router
-    }
-  },
-  data() {
-    return {
-      isMenuOpen: false,
-      isBlur: true,
-      isNavOpen: false,
-    }
-  },
-}
+  components: { LogoSVG, CallButton, HamburgerMenu },
+  setup() {
+    const isBlur = ref(true);
+    const isNavOpen = ref(false);
+    const navRef = ref(null);
 
+    const openNav = () => {
+      console.log('click op de button');
+      isNavOpen.value = !isNavOpen.value;
+    };
+
+    const closeNav = () => {
+      isNavOpen.value = false;
+    };
+
+    const routerInstance = () => {
+      return router;
+    };
+
+    onMounted(() => {
+      if (navRef.value) {
+        // Emit the reference to the nav element
+        this.$emit('nav-reference', navRef.value);
+      }
+    });
+
+    return {
+      isBlur,
+      isNavOpen,
+      navRef,
+      openNav,
+      closeNav,
+      router: routerInstance,
+    };
+  },
+};
 </script>
+
 
 <style scoped>
 /*global*/

@@ -1,16 +1,16 @@
 <template>
-  <HeaderDrie></HeaderDrie>
+  <HeaderDrie @nav-reference="storeNavRef"></HeaderDrie>
     <main>
       <router-view class="views"/>
     </main>
 
   <FooterDrie></FooterDrie>
 
-  <page-transition02></page-transition02>
+  <PageTransition02 :navRef="navRef"></PageTransition02>
 </template>
 
 <script>
-
+import { ref } from 'vue';
 
 import HeaderDrie from "@/components/header/HeaderDrie.vue"
 import FooterDrie from "@/components/footer/FooterDrie.vue";
@@ -18,6 +18,18 @@ import PageTransition02 from "@/components/pageTransition/PageTransition02.vue";
 
 export default {
   name: 'App',
+  setup() {
+    const navRef = ref(null);
+
+    const storeNavRef = (ref) => {
+      navRef.value = ref;
+    };
+
+    return {
+      navRef,
+      storeNavRef
+    };
+  },
   data() {
     return {
       headerScroll: true,
