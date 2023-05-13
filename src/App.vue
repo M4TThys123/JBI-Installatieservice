@@ -5,6 +5,8 @@
     </main>
 
   <FooterDrie></FooterDrie>
+
+  <page-transition02></page-transition02>
 </template>
 
 <script>
@@ -12,6 +14,7 @@
 
 import HeaderDrie from "@/components/header/HeaderDrie.vue"
 import FooterDrie from "@/components/footer/FooterDrie.vue";
+import PageTransition02 from "@/components/pageTransition/PageTransition02.vue";
 
 export default {
   name: 'App',
@@ -21,6 +24,7 @@ export default {
     }
   },
   components: {
+    PageTransition02,
     FooterDrie,
     HeaderDrie
   },
