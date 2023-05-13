@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ 'blur': isBlur }">
+  <header :class="{ 'blur': isBlur }" >
     <nav>
       <router-link to="/" class="logo__link" @click="closeNav">
         <logo-s-v-g></logo-s-v-g>
@@ -11,13 +11,13 @@
               v-for="(route, index) in router().options.routes" :key="index">
             <router-link class="nav__link" :to="route.path" @click="closeNav"> {{ route.name}}</router-link>
           </li>
-          <li>
+          <li class="mt-3">
             <call-button></call-button>
           </li>
         </ul>
       </div>
 
-      <hamburger-menu @click="openNav" :is-nav-open="isNavOpen" class="menu__trigger"></hamburger-menu>
+      <hamburger-menu  @click="openNav" :is-nav-open="isNavOpen"  class="menu__trigger"></hamburger-menu>
     </nav>
   </header>
 </template>
@@ -31,22 +31,25 @@ import router from "@/router";
 export default {
   name: "HeaderComponent04",
   components: {LogoSVG, CallButton, HamburgerMenu},
+  data() {
+    return {
+      isMenuOpen: false,
+      isBlur: false,
+      isNavOpen: false,
+    }
+  },
   methods: {
     openNav(){
       console.log('click op de button')
       this.isNavOpen = !this.isNavOpen
+      this.isBlur = !this.isBlur
     },
     closeNav() {
       this.isNavOpen = false;
+      this.isBlur = true
     },
     router() {
       return router
-    }
-  },
-  data() {
-    return {
-      isBlur: true,
-      isNavOpen: false,
     }
   },
 }
@@ -154,6 +157,7 @@ nav{
   }
   .nav__list--open{
     transform: translateY(0);
+    padding-top: 5em;
   }
   .nav__item{
     font-size: 48px;
