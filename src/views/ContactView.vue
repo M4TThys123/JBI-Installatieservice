@@ -1,40 +1,32 @@
 <template>
-  <div class="container">
-    <h1 class="mt-5 mb-3">Contact Us</h1>
-    <form @submit.prevent="onSubmit">
-      <div class="mb-3">
-        <label for="name" class="form-label">Name:</label>
-        <input type="text" class="form-control" id="name" v-model="name" required>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email:</label>
-        <input type="email" class="form-control" id="email" v-model="email" required>
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label">Message:</label>
-        <textarea class="form-control" id="message" v-model="message" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
+  <view-hero03 :title="heroTitle" :paragraph="heroParagraph"></view-hero03>
+  <contact-information></contact-information>
+  <contact-form></contact-form>
 </template>
 
 
 <script>
+
+
+
+import ViewHero03 from "@/lib/components/hero/ViewHero03.vue";
+import ContactInformation from "@/lib/components/contact/ContactInformation.vue";
+import ContactForm from "@/lib/components/contact/ContactForm.vue";
+
 export default {
   name: "ContactView",
+  components: {
+    ContactForm,
+    ContactInformation,
+    ViewHero03,
+  },
   data() {
     return {
-      name: '',
-      email: '',
-      message: ''
-    }
+      heroTitle: "Contact ons! ",
+      heroParagraph: "Voor vrijblijvende advies, offertes of \n" +
+          "onderhoud.\n" +
+          "\n",
+    };
   },
-  methods: {
-    onSubmit() {
-      // Code to handle form submission goes here
-      console.log('Form submitted!')
-    }
-  }
 }
 </script>

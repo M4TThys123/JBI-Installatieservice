@@ -1,17 +1,19 @@
 <template>
-  <header :class="{ 'blur': isBlur }" >
+  <header :class="{ 'blur': isScrolled }" >
     <nav>
       <router-link to="/" class="logo__link" @click="closeNav">
-        <logo-s-v-g></logo-s-v-g>
+        <logo-s-v-g :class="{ 'color__scroll': isScrolled }"></logo-s-v-g>
       </router-link  >
 
       <div class="nav__menu">
-        <ul class="nav__list"  :class="{'nav__list--open' : isNavOpen}" >
+<!--        <ul class="nav__list"  :class="{'nav__list&#45;&#45;open' : isNavOpen,'blur': isNavOpen }" >-->
+          <ul class="nav__list"  :class="{'nav__list--open' : isNavOpen, 'blur' : isNavOpen}" >
+
           <li class="nav__item"
               v-for="(route, index) in router().options.routes" :key="index">
             <router-link class="nav__link" :to="route.path" @click="closeNav"> {{ route.name}}</router-link>
           </li>
-          <li class="mt-3">
+          <li class="mt-3 mt-lg-0">
             <call-button></call-button>
           </li>
         </ul>
@@ -33,29 +35,49 @@ export default {
   components: {LogoSVG, CallButton, HamburgerMenu},
   data() {
     return {
-      isMenuOpen: false,
       isBlur: false,
       isNavOpen: false,
+      isScrolled: false
+
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
     openNav(){
       console.log('click op de button')
       this.isNavOpen = !this.isNavOpen
-      this.isBlur = !this.isBlur
+      this.isScrolled = false
     },
     closeNav() {
       this.isNavOpen = false;
       this.isBlur = true
+      this.isScrolled = true
+
     },
     router() {
       return router
+    },
+    handleScroll() {
+      if (window.pageYOffset > 0) {
+        this.isScrolled = true;
+      } else {
+        this.isScrolled = false;
+      }
     }
   },
 }
 </script>
 
 <style scoped>
+
+.color__scroll{
+  fill: #192321;
+}
 /*global*/
 a {
   text-decoration: none;
@@ -69,6 +91,7 @@ header{
   top: 0;
 
   /*padding: 1.5rem 1.875rem 1rem;*/
+  transition: all 0.3s ease;
 }
 
 /*Nav*/
@@ -81,8 +104,8 @@ nav{
   align-items: center;
 }
 .nav__menu{
-  display: flex;
-  justify-content: center;
+  /*display: flex;*/
+  /*justify-content: center;*/
 }
 .nav__list{
   margin-bottom: 0;
@@ -116,7 +139,6 @@ nav{
 .blur{
   backdrop-filter: blur(24px);
   background-color: rgba(61, 149, 209, 0.4);
-
 }
 
 @media screen and (max-width: 1024px) {
@@ -149,8 +171,6 @@ nav{
     justify-content: flex-start;
     align-items: flex-start;
 
-    background-color: rgba(61, 149, 209, 0.8);
-    backdrop-filter: blur(24px);
 
     transition: transform .3s ease-out;
     transform: translateY(-100%);

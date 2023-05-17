@@ -1,6 +1,5 @@
 <template>
   <svg class="logo__svg"
-       :style="{fill: logoFill}"
        id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488.41 171.94">
     <g id="Layer_1-2" data-name="Layer 1">
       <g>
@@ -18,17 +17,6 @@
 <script>
 export default {
   name: "LogoSVG",
-  props: {
-    fill: {
-      type: String,
-      default: '#192321'
-    }
-  },
-  computed: {
-    logoFill() {
-      return this.fill
-    }
-  }
 }
 </script>
 
@@ -36,9 +24,8 @@ export default {
 .logo__svg{
   max-height: 32px;
   width: 100%;
+  fill: #FFFFFF;
+  transition: all 0.4s ease;
 }
 
-.logo__svg {
-  fill: #192321;
-}
 </style>

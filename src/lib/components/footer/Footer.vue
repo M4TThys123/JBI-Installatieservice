@@ -6,58 +6,58 @@
           <h3 class="mb-3 text-white">Neem contact op!</h3>
           <call-button background="#3D95D1"></call-button>
         </section>
-        <section class="col-6 col-md-2">
-          <ul class="list-unstyled footer__link-list">
-            <li>
-              <router-link to="/" class="footer__link-prm text-white">Home</router-link>
-            </li>
-            <li>
-              <router-link to="/over" class="footer__link">Over ons</router-link>
-            </li>
-            <li>
-              <router-link to="/partners" class="footer__link">Partners</router-link>
-            </li>
-          </ul>
-        </section>
-        <section class="col-6 col-md-2">
-          <ul class="list-unstyled footer__link-list">
-            <li>
-              <router-link to="/diensten" class="footer__link-prm text-white">Diensten</router-link>
-            </li>
-            <li>
-              <router-link to="/diensten" class="footer__link">CV-Installatie</router-link>
-            </li>
-            <li>
-              <router-link to="/diensten" class="footer__link">Onderhoud</router-link>
-            </li>
-            <li>
-              <router-link to="/diensten" class="footer__link">Installatiewerk</router-link>
-            </li>
-            <li>
-              <router-link to="/diensten" class="footer__link">Woningventalatie</router-link>
-            </li>
-          </ul>
-        </section>
-        <section class="col-6 col-md-2">
-          <ul class="list-unstyled footer__link-list">
-            <li>
-              <router-link to="/contact" class="footer__link-prm text-white">Contact</router-link>
-            </li>
-            <li>
-              <router-link to="/contact" class="footer__link">
-                <i class='bx bxs-phone' ></i>
-                <span class="ml">Bellen</span>
-              </router-link>
-            </li>
-            <li>
-              <router-link to="/contact" class="footer__link">
-                <i class='bx bxs-envelope' ></i>
-                <span class="ml">Mailen</span>
-              </router-link>
-            </li>
-          </ul>
-        </section>
 
+        <section class="col-6 col-md-2 mt-3">
+            <ul class="list-unstyled footer__link-list">
+              <li>
+                <router-link to="/" class="footer__link-prm text-white">Home</router-link>
+              </li>
+              <li>
+                <router-link to="/over" class="footer__link">Over ons</router-link>
+              </li>
+              <li>
+                <router-link to="/partners" class="footer__link">Partners</router-link>
+              </li>
+            </ul>
+          </section>
+        <section class="col-6 col-md-2">
+            <ul class="list-unstyled footer__link-list">
+              <li>
+                <router-link to="/diensten" class="footer__link-prm text-white">Diensten</router-link>
+              </li>
+              <li>
+                <router-link to="/diensten" class="footer__link">CV-Installatie</router-link>
+              </li>
+              <li>
+                <router-link to="/diensten" class="footer__link">Onderhoud</router-link>
+              </li>
+              <li>
+                <router-link to="/diensten" class="footer__link">Installatiewerk</router-link>
+              </li>
+              <li>
+                <router-link to="/diensten" class="footer__link">Woningventalatie</router-link>
+              </li>
+            </ul>
+          </section>
+        <section class="col-6 col-md-2">
+            <ul class="list-unstyled footer__link-list">
+              <li>
+                <router-link to="/contact" class="footer__link-prm text-white">Contact</router-link>
+              </li>
+              <li>
+                <router-link to="/contact" class="footer__link">
+                  <i class='bx bxs-phone' ></i>
+                  <span class="ml">Bellen</span>
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/contact" class="footer__link">
+                  <i class='bx bxs-envelope' ></i>
+                  <span class="ml">Mailen</span>
+                </router-link>
+              </li>
+            </ul>
+          </section>
       </section>
 
       <hr class="my-4">

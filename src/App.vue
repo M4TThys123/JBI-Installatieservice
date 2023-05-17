@@ -7,11 +7,11 @@
   <HeaderComponent04></HeaderComponent04>
 
 
-  <main>
+  <main class="content">
     <router-view class="views"/>
   </main>
 
-  <Footer></Footer>
+  <Footer class="footer"></Footer>
 </template>
 
 <script>
@@ -105,5 +105,11 @@ li {
 *:focus {
   outline: 2px solid dodgerblue;
   outline-offset: 4px;
+}
+.footer {
+  margin-top: auto; /* Push the footer to the bottom */
+}
+.content {
+  flex: 1; /* Expand to fill remaining space */
 }
 </style>
