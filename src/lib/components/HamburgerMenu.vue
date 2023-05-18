@@ -1,9 +1,9 @@
 <template>
   <button id="ham-burger" :class="{ 'open': isNavOpen }">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span :class="{'white' : !isScrolled}"></span>
+    <span :class="{'white' : !isScrolled}"></span>
+    <span :class="{'white' : !isScrolled}"></span>
+    <span :class="{'white' : !isScrolled}"></span>
   </button>
 </template>
 
@@ -12,6 +12,10 @@ export default {
   name: "HamburgerMenu",
   props: {
     isNavOpen: {
+      type: Boolean,
+      required: true
+    },
+    isScrolled:{
       type: Boolean,
       required: true
     }
@@ -97,5 +101,8 @@ export default {
   top: 10px;
   width: 0%;
   left: 50%;
+}
+.white{
+  background: #FFFFFF !important;
 }
 </style>

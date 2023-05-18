@@ -1,7 +1,10 @@
 <template>
   <view-hero03 :title="heroTitle" :paragraph="heroParagraph"></view-hero03>
-  <contact-information></contact-information>
-  <contact-form></contact-form>
+
+  <section class="container">
+    <contact-information class="mb-5"></contact-information>
+    <contact-form></contact-form>
+  </section>
 </template>
 
 

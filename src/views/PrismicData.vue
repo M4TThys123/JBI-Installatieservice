@@ -1,8 +1,6 @@
 <template>
-  <section class="container prismic__data">
-    <section class="mt-5">
-      <h2>Hier Vind je de prismic Data</h2>
-    </section>
+  <section>
+    <view-hero03 title="Prismic Data" paragraph="Datadriven Interactive Webpages API's CMS things"></view-hero03>
 <!--    <prismic-data1></prismic-data1>-->
 
     <prismic-data2></prismic-data2>
@@ -13,10 +11,12 @@
 
 // import PrismicData1 from "@/components/prismic/PrismicData01.vue";
 import PrismicData2 from "@/components/prismic/PrismicData02.vue";
+import ViewHero03 from "@/lib/components/hero/ViewHero03.vue";
 
 export default {
   name: 'PrismicData',
-  components: {PrismicData2,
+  components: {
+    ViewHero03, PrismicData2,
     // PrismicData1
   },
 }

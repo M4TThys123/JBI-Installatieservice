@@ -19,7 +19,7 @@
         </ul>
       </div>
 
-      <hamburger-menu  @click="openNav" :is-nav-open="isNavOpen"  class="menu__trigger"></hamburger-menu>
+      <hamburger-menu  @click="openNav" :is-nav-open="isNavOpen"  :is-scrolled="isScrolled" class="menu__trigger"></hamburger-menu>
     </nav>
   </header>
 </template>

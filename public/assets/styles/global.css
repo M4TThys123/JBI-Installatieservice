@@ -4,6 +4,9 @@
     --color-border: #E5E5E6;
     --color-border-fill: #F9F9FB;
     --color-white: #FFFFFF;
+    --color-ligt-grey: #F7F8FC;
+
+    --background-color: color-ligt-grey;
 }
 
 * {
@@ -20,6 +23,7 @@ html {
 body{
     max-width: 100vw;
     overflow-x: hidden;
+    background-color:  #F7F8FC;
 }
 
 img {

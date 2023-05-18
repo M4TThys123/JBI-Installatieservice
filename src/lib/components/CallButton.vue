@@ -39,7 +39,7 @@ export default {
 .phone__button{
   border-radius: 22px;
   width: 140px;
-  height: 43px;
+  height: 40px;
 
 
   display: flex;

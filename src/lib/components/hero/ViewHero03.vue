@@ -1,5 +1,5 @@
 <template>
-  <section class="view__hero">
+  <section class="view__hero mb-5">
     <h1 class="hero__title">{{ title }}</h1>
     <p class="hero__paragraph">{{ paragraph }}</p>
   </section>
@@ -23,29 +23,37 @@ export default {
 
 <style scoped>
 .view__hero {
-  background-color: #3D95D1;
+  padding: 80px 16px 32px 16px;
   height: 100vh;
-  max-height: 310px;
+  max-height: 240px;
+
+  background-color: #3D95D1;
+
+  border-bottom: 8px solid #95C6FA;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
+}
+.hero__title{
+  font-size: 52px;
+}
+.hero__paragraph{
+  font-size: 20px;
 }
 
-@media (min-width: 576px) {
-  /* Extra Small devices (portrait phones) and up */
-  .view__hero {
-    max-height: 310px;
-  }
-}
-
+/* SM (for tablets - screens ≥ than 768px wide) */
 @media (min-width: 768px) {
-  /* Small devices (landscape phones) and up */
-  .view__hero {
-    max-height: 310px;
+  /* CSS rules for tablets go here */
+  .hero__title, .hero__paragraph{
+    text-align: center;
   }
 }
 
+/* MD (for small laptops - screens ≥ than 992px wide) */
 @media (min-width: 992px) {
-  /* Medium devices (tablets) and up */
-  .view__hero {
-    max-height: 310px;
-  }
+  /* CSS rules for small laptops go here */
+}
+
+/* LG (for laptops and desktops - screens ≥ than 1200px wide) */
+@media (min-width: 1200px) {
+  /* CSS rules for laptops and desktops go here */
 }
 </style>

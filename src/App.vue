@@ -63,6 +63,14 @@ export default {
 
 }
 
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -70,6 +78,7 @@ html {
 body{
   max-width: 100vw;
   overflow-x: hidden;
+  background: #F7F8FC !important;
 }
 
 img {
