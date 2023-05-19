@@ -52,11 +52,15 @@ export default {
       console.log('click op de button')
       this.isNavOpen = !this.isNavOpen
       this.isScrolled = false
+      document.body.classList.add('no-scroll'); // Add no-scroll class
+      this.handleScroll(); // Toggle isScrolled
     },
     closeNav() {
       this.isNavOpen = false;
       this.isBlur = true
       this.isScrolled = true
+      document.body.classList.remove('no-scroll'); // Remove no-scroll class
+      this.handleScroll(); // Toggle isScrolled
 
     },
     router() {

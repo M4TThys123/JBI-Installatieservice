@@ -25,6 +25,11 @@ body{
     overflow-x: hidden;
     background-color:  #F7F8FC;
 }
+.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
 
 img {
     width: 100%;

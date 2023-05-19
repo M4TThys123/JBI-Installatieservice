@@ -4,6 +4,7 @@ import Diensten from '../views/DienstenView.vue'
 import Partners from '../views/Partners.vue'
 import Contact from '../views/ContactView.vue'
 import Over from '../views/OverView.vue'
+import Prismic from '../views/PrismicView.vue'
 
 const routes = [
     {
@@ -35,6 +36,11 @@ const routes = [
         path: '/contact',
         name: 'Contact',
         component: Contact
+    },
+    {
+        path: '/primic',
+        name: 'Prismic Data',
+        component: Prismic
     },
 ]
 

@@ -63,6 +63,12 @@ export default {
 
 }
 
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 .sr-only {
   position: absolute;
   left: -9999px;

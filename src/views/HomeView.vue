@@ -1,52 +1,29 @@
 <template>
-    <HomeHero></HomeHero>
+  <HomeHero></HomeHero>
 
-    <section class="hero__wrapper">
-      <section class="hero__header">
-        <section class="hero__header-text">
-        <h1>JBI Installatie-<br>
-            service
-        </h1>
-        <h2>
-          Groot in klein werk. Niet te klein <br>
-          voor het grote werk.
-        </h2>
-        </section>
-      </section>
-      <section class="hero__top" :style="{ backgroundImage: `url(${backgroundImage})` }">
-      </section>
-      <section class="hero__bottom">
-        <figure>
-        </figure>
-      </section>
-    </section>
-
-  <diensten-component02></diensten-component02>
-
-
-  <OverView></OverView>
-
-  <partners-view></partners-view>
-
-  <ContactView></ContactView>
+  <diensten-component01></diensten-component01>
 </template>
 
 <script>
-
-import ContactView from "@/views/ContactView.vue";
-import OverView from "@/views/OverView.vue";
-import PartnersView from "@/views/Partners.vue";
-import DienstenComponent02 from "@/lib/components/diensten/DienstenComponent02.vue";
 import HomeHero from "@/lib/components/hero/HomeHero.vue";
+import DienstenComponent01 from "@/lib/components/diensten/DienstenComponent01.vue";
+
+
 
 export default {
   name: 'HomeView',
-  components: {HomeHero, DienstenComponent02, PartnersView, OverView, ContactView},
+  components: {
+    DienstenComponent01,
+    HomeHero,
+  },
 
 }
 </script>
 
 <style scoped>
+.white-space{
+
+}
   /* XS (for phones - screens < than 768px wide) */
   @media (width < 768px) {
     /* CSS rules for phones go here */

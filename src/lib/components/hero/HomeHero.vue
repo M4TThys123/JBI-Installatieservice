@@ -110,6 +110,7 @@ export default {
     justify-content: center;
   }
 }
+
 @media screen and (min-width: 1200px) {
   .hero__wrapper{
     max-height: none;
