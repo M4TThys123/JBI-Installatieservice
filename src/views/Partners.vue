@@ -1,5 +1,6 @@
 <template>
   <view-hero03 title="Onze Partners" paragraph="Wij werken smaen met x & X"></view-hero03>
+
   <section class="container">
     <section class="row">
       <section class="col-md-6">

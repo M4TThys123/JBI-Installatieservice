@@ -1,5 +1,6 @@
 <template>
-  <div>
+    <HomeHero></HomeHero>
+
     <section class="hero__wrapper">
       <section class="hero__header">
         <section class="hero__header-text">
@@ -19,7 +20,6 @@
         </figure>
       </section>
     </section>
-  </div>
 
   <diensten-component02></diensten-component02>
 
@@ -37,97 +37,33 @@ import ContactView from "@/views/ContactView.vue";
 import OverView from "@/views/OverView.vue";
 import PartnersView from "@/views/Partners.vue";
 import DienstenComponent02 from "@/lib/components/diensten/DienstenComponent02.vue";
+import HomeHero from "@/lib/components/hero/HomeHero.vue";
 
 export default {
   name: 'HomeView',
-  components: {DienstenComponent02, PartnersView, OverView, ContactView},
-  data() {
-    return {
-      backgroundImage: "/assets/images/hero/hero_image.png"
-    };
-  }
+  components: {HomeHero, DienstenComponent02, PartnersView, OverView, ContactView},
+
 }
 </script>
 
 <style scoped>
-.hero__wrapper{
-  height: 75vh;
-  max-height: 620px;
-  display: flex;
-  flex-direction: column;
-}
-.hero__header{
-  position: absolute;
-  color: white;
-}
-.hero__header-text{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 13em 1em;
-
-  height: 100%;
-}
-.hero__header h1{
-  font-size: 50px;
-  font-weight: bold;
-  margin-bottom: 225px;
-}
-.hero__header h2{
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.hero__top{
-  height: 50%;
-  width: 100%;
-  background-size: cover;
-  background-position-y: -25px;
-  /*Placeholder styling*/
-  /*background: #14151A no-repeat;*/
-}
-.hero__bottom{
-  height: 50%;
-  width: 100%;
-  background: #0096D7;
-
-  display: flex;
-  justify-content: center;
-  padding: 2em;
-}
-.hero__bottom figure{
-  width: 100%;
-  height: 191px;
-  background: #BAC6FF;
-  border-radius: 18px;
-}
-@media screen and (min-width: 750px) {
-  .hero__wrapper {
-    flex-direction: row;
+  /* XS (for phones - screens < than 768px wide) */
+  @media (width < 768px) {
+    /* CSS rules for phones go here */
   }
 
-  .hero__top {
-    height: 100%;
-    width: 100%;
+  /* SM (for tablets - screens ≥ than 768px wide) */
+  @media (width >= 768px) {
+    /* CSS rules for tablets go here */
   }
 
-  .hero__bottom {
-    height: 100%;
-    width: 100%;
-    align-items: center;
+  /* MD (for small laptops - screens ≥ than 992px wide) */
+  @media (width >= 992px) {
+    /* CSS rules for small laptops go here */
   }
-  .hero__bottom figure {
-    width: 361px;
-    height: 461px;
+
+  /* LG (for laptops and desktops - screens ≥ than 1200px wide) */
+  @media (width >= 1200px) {
+    /* CSS rules for laptops and desktops go here */
   }
-  .hero__header {
-    display: flex;
-    justify-content: center;
-  }
-  }
-@media screen and (min-width: 1200px) {
-  .hero__wrapper{
-    max-height: none;
-  }
-}
 </style>

@@ -22,38 +22,28 @@ export default {
 </script>
 
 <style scoped>
-.view__hero {
-  padding: 80px 16px 32px 16px;
-  height: 100vh;
-  max-height: 240px;
+  .view__hero {
+    padding: 80px 16px 32px 16px;
+    height: 100vh;
+    max-height: 240px;
 
-  background-color: #3D95D1;
+    background-color: #3D95D1;
 
-  border-bottom: 8px solid #95C6FA;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
-}
-.hero__title{
-  font-size: 52px;
-}
-.hero__paragraph{
-  font-size: 20px;
-}
-
-/* SM (for tablets - screens ≥ than 768px wide) */
-@media (min-width: 768px) {
-  /* CSS rules for tablets go here */
-  .hero__title, .hero__paragraph{
-    text-align: center;
+    border-bottom: 8px solid #95C6FA;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
   }
-}
+  .hero__title{
+    font-size: 52px;
+  }
+  .hero__paragraph{
+    font-size: 20px;
+  }
 
-/* MD (for small laptops - screens ≥ than 992px wide) */
-@media (min-width: 992px) {
-  /* CSS rules for small laptops go here */
-}
-
-/* LG (for laptops and desktops - screens ≥ than 1200px wide) */
-@media (min-width: 1200px) {
-  /* CSS rules for laptops and desktops go here */
-}
+  /* SM (for tablets - screens ≥ than 768px wide) */
+  @media (width >= 768px) {
+    /* CSS rules for tablets go here */
+    .hero__title, .hero__paragraph{
+      text-align: center;
+    }
+  }
 </style>
