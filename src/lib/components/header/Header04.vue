@@ -19,7 +19,7 @@
         </ul>
       </div>
 
-      <hamburger-menu  @click="openNav" :is-nav-open="isNavOpen"  :is-scrolled="isScrolled" class="menu__trigger"></hamburger-menu>
+      <hamburger-menu  @click="toggleNav" :is-nav-open="isNavOpen"  :is-scrolled="isScrolled" class="menu__trigger"></hamburger-menu>
     </nav>
   </header>
 </template>
@@ -62,6 +62,16 @@ export default {
       document.body.classList.remove('no-scroll'); // Remove no-scroll class
       this.handleScroll(); // Toggle isScrolled
 
+    },
+
+    toggleNav() {
+      this.isNavOpen = !this.isNavOpen;
+
+      if (this.isNavOpen) {
+        document.body.classList.add('no-scroll');
+      } else {
+        document.body.classList.remove('no-scroll');
+      }
     },
     router() {
       return router

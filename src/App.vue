@@ -47,6 +47,13 @@ export default {
 </script>
 
 <style>
+/* For WebKit-based browsers */
+::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
+}
+
+/* For Firefox */
 :root{
   --color-primary-blue: #0096D7;
   --color-secondary-blue: #BAC6FF;
