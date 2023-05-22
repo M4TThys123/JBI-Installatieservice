@@ -85,7 +85,7 @@ export default {
 }
 
 /* XS (for phones - screens < than 768px wide) */
-@media (width < 768px) {
+@media (width > 768px) {
   /* CSS rules for phones go here */
   .hero__wrapper {
     flex-direction: row;
