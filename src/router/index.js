@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/HomeView.vue'
 import Diensten from '../views/DienstenView.vue'
+import DienstenDetail from '../views/DienstenDetail.vue'
 import Partners from '../views/Partners.vue'
 import Contact from '../views/ContactView.vue'
 import Over from '../views/OverView.vue'
@@ -17,15 +18,16 @@ const routes = [
         name: 'Diensten',
         component: Diensten
     },
-    // {
-    //     path: '/diensten/:id',
-    //     name: 'Home',
-    //     component: Dienst
-    // },
+    {
+        path: '/diensten/:uid',
+        name: 'DienstenDetail',
+        component: DienstenDetail
+    },
     {
         path: '/partners',
         name: 'Partners',
         component: Partners
+
     },
     {
         path: '/over',

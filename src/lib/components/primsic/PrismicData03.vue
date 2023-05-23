@@ -15,16 +15,20 @@
       <span class="sr-only">Loading...</span>
     </section>
   </section>
+
+  <SkeletonLoader></SkeletonLoader>
 </template>
 
 <script>
 import PrismicVue from '@prismicio/vue';
 import Prismic from 'prismic-javascript';
+import SkeletonLoader from "@/lib/components/skeleton/SkeletonLoader.vue";
 
 
 
 export default {
   name: "PrismicData3",
+  components: {SkeletonLoader},
   data() {
     return {
       documents: [],

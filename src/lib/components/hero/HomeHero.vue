@@ -1,19 +1,21 @@
 <template>
-  <section class="hero__wrapper">
-    <section class="hero__header">
-      <section class="hero__header-text">
-        <h1>JBI Installatie-<br>
-          service
-        </h1>
+  <section class="hero-wrapper">
+    <section class="hero-header">
+      <section class="hero-header__text">
+        <div class="d-flex justify-content-start">
+          <h1>JBI Installatie-<br>
+            service
+          </h1>
+        </div>
         <h2>
           Groot in klein werk. Niet te klein <br>
           voor het grote werk.
         </h2>
       </section>
     </section>
-    <section class="hero__top" :style="{ backgroundImage: `url(${backgroundImage})` }">
+    <section class="hero-top" :style="{ backgroundImage: `url(${backgroundImage})` }">
     </section>
-    <section class="hero__bottom">
+    <section class="hero-bottom">
       <figure>
       </figure>
     </section>
@@ -33,46 +35,49 @@ export default {
 </script>
 
 <style scoped>
-.hero__wrapper{
+.hero-wrapper{
   height: 75vh;
   max-height: 620px;
   display: flex;
   flex-direction: column;
 }
-.hero__header{
-  position: absolute;
+
+.hero-header{
   color: white;
+  position: absolute;
+  height: 75vh;
+
 }
-.hero__header-text{
+
+.hero-header__text {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 13em 1em;
-
-  height: 100%;
+  justify-content: space-between;
+  padding: 15rem 1rem 0 1rem;
+  height: 38em;
 }
-.hero__header h1{
-  font-size: 50px;
+.hero-header h1{
   font-weight: bold;
-  margin-bottom: 225px;
+  text-align: left;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.04em;
 }
-.hero__header h2{
-  font-size: 20px;
+.hero-header h2{
+  font-size: 22px;
   font-weight: bold;
+  /*margin-top: 11.5rem;*/
+  width: auto;
 }
 
-.hero__top{
+.hero-top{
   height: 50%;
   width: 100%;
   background-size: cover;
   background-position-y: -25px;
-  background-position: ;
 
-
-  /*Placeholder styling*/
-  /*background: #14151A no-repeat;*/
 }
-.hero__bottom{
+.hero-bottom{
   height: 50%;
   width: 100%;
   background: #0096D7;
@@ -81,67 +86,88 @@ export default {
   justify-content: center;
   padding: 2em;
 }
-.hero__bottom figure{
+.hero-bottom figure{
   width: 100%;
   height: 191px;
   background: #BAC6FF;
   border-radius: 18px;
 }
 
-/* XS (for phones - screens < than 768px wide) */
-@media (width > 768px) {
-  /* CSS rules for phones go here */
-  .hero__wrapper {
+
+@media (width >= 768px) {
+  .hero-wrapper {
     flex-direction: row;
     height: 75vh;
     max-height: 620px;
   }
-
-  .hero__top {
+  .hero-top {
     height: 100%;
     width: 100%;
   }
-
-  .hero__bottom {
+  .hero-bottom {
     height: 100%;
     width: 100%;
     align-items: center;
   }
-  .hero__bottom figure {
+  .hero-bottom figure {
     width: 361px;
     height: 461px;
   }
-  .hero__header {
-    display: flex;
-    justify-content: center;
+
+
+  .hero-header__text{
+    width: 100%;
   }
-}
-
-@media (width >= 1200px) {
-  .hero__wrapper{
-    max-height: none;
-    height: 90vh;
+  .hero-header__text h1{
+    text-align: right;
+    font-size: 8vw;
+    margin-left: 0.8em;
   }
-}
+  .hero-header__text h2{
+    max-width: 13.75rem;
+  }
 
-/* XS (for phones - screens < than 768px wide) */
-@media (width < 768px) {
-  /* CSS rules for phones go here */
-}
-
-/* SM (for tablets - screens ≥ than 768px wide) */
-@media (width >= 768px) {
-  /* CSS rules for tablets go here */
 }
 
 /* MD (for small laptops - screens ≥ than 992px wide) */
 @media (width >= 992px) {
-  /* CSS rules for small laptops go here */
+  .hero-header__text{
+    height: 100%;
+    margin-bottom: 2em;
+  }
+  .hero-header__text h2{
+    max-width: 21.75rem;
+    font-size: 2vw;
+  }
 }
 
-/* LG (for laptops and desktops - screens ≥ than 1200px wide) */
 @media (width >= 1200px) {
-  /* CSS rules for laptops and desktops go here */
+  .hero-wrapper{
+    font-size: 10vw;
+    max-height: none;
+    height: 90vh;
+  }
+  .hero-top{
+    background-position-y: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .hero-header{
+    height: 90vh;
+  }
 }
+.hero-header__text h2{
+  max-width: 21.75rem;
+}
+.hero-header__text h2{
+  max-width: 40rem;
+  margin-bottom: 1rem;
+}
+figure {
+  width: 100% !important;
+  aspect-ratio: 9/11!important;; /* aspect ratio of 360px by 460px */
+  max-width: 100vw!important;; /* restrict the maximum width to the viewport width */
+}
+
 
 </style>

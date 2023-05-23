@@ -7,10 +7,12 @@
 
       <div class="nav__menu">
         <ul class="nav__list"  :class="{'nav__list--open' : isNavOpen, 'blur' : isNavOpen}" >
-
           <li class="nav__item"
               v-for="(route, index) in router().options.routes" :key="index">
-            <router-link class="nav__link" :to="route.path" @click="closeNav"> {{ route.name}}</router-link>
+            <router-link class="nav__link" :to="route.path" @click="closeNav"
+                         :class="{ 'text-color__scroll': isScrolled, 'text-color__nav-open': isNavOpen }">
+              {{ route.name}}
+            </router-link>
           </li>
           <li class="mt-3 mt-lg-0">
             <call-button></call-button>
@@ -37,7 +39,6 @@ export default {
       isBlur: false,
       isNavOpen: false,
       isScrolled: false
-
     }
   },
   mounted() {
@@ -102,7 +103,6 @@ header{
   z-index: 999;
   padding: 0.75rem 1rem;
   top: 0;
-
   /*padding: 1.5rem 1.875rem 1rem;*/
   transition: all 0.3s ease;
 }
@@ -115,6 +115,9 @@ nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  max-width: 120rem;
+  margin: auto;
 }
 .nav__menu{
   /*display: flex;*/
@@ -134,7 +137,8 @@ nav{
 }
 
 .nav__link{
-  color: #192321;
+  color: #FFFFFF;
+  transition:  .3s;
 
 }
 
@@ -198,4 +202,14 @@ nav{
     font-family: Inter, sans-serif;
   }
 }
+.text-color__scroll{
+  color: #192321;
+}
+.text-color__nav-open{
+  color: #FFFFFF;
+}
+.nav__list--open{
+  visibility: visible;
+}
+
 </style>
