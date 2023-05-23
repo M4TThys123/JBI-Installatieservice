@@ -3,7 +3,7 @@
 
   <section class="container">
     <contact-information class="mb-5"></contact-information>
-    <contact-form></contact-form>
+    <contact-form class="mb-5"></contact-form>
   </section>
 </template>
 
@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      heroTitle: "Contact ons! ",
+      heroTitle: "Neem contact op! ",
       heroParagraph: "Voor vrijblijvende advies, offertes of \n" +
           "onderhoud.\n" +
           "\n",

@@ -25,7 +25,8 @@ export default {
   name: "HomeHero",
   data() {
     return {
-      backgroundImage: "/assets/images/hero/hero_image.png"
+      backgroundImage: "/assets/images/hero/hero_image.png",
+
     };
   }
 }
@@ -65,6 +66,9 @@ export default {
   width: 100%;
   background-size: cover;
   background-position-y: -25px;
+  background-position: ;
+
+
   /*Placeholder styling*/
   /*background: #14151A no-repeat;*/
 }
@@ -89,6 +93,8 @@ export default {
   /* CSS rules for phones go here */
   .hero__wrapper {
     flex-direction: row;
+    height: 75vh;
+    max-height: 620px;
   }
 
   .hero__top {
@@ -111,10 +117,31 @@ export default {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media (width >= 1200px) {
   .hero__wrapper{
     max-height: none;
+    height: 90vh;
   }
+}
+
+/* XS (for phones - screens < than 768px wide) */
+@media (width < 768px) {
+  /* CSS rules for phones go here */
+}
+
+/* SM (for tablets - screens ≥ than 768px wide) */
+@media (width >= 768px) {
+  /* CSS rules for tablets go here */
+}
+
+/* MD (for small laptops - screens ≥ than 992px wide) */
+@media (width >= 992px) {
+  /* CSS rules for small laptops go here */
+}
+
+/* LG (for laptops and desktops - screens ≥ than 1200px wide) */
+@media (width >= 1200px) {
+  /* CSS rules for laptops and desktops go here */
 }
 
 </style>

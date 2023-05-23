@@ -6,7 +6,6 @@
       </router-link  >
 
       <div class="nav__menu">
-<!--        <ul class="nav__list"  :class="{'nav__list&#45;&#45;open' : isNavOpen,'blur': isNavOpen }" >-->
           <ul class="nav__list"  :class="{'nav__list--open' : isNavOpen, 'blur' : isNavOpen}" >
 
           <li class="nav__item"

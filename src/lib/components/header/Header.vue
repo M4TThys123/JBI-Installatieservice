@@ -1,23 +1,24 @@
 <template>
-  <header :class="{ 'blur': isBlur }">
+  <header :class="{ 'blur': isScrolled }" >
     <nav>
       <router-link to="/" class="logo__link" @click="closeNav">
-        <logo-s-v-g></logo-s-v-g>
+        <logo-s-v-g :class="{ 'color__scroll': isScrolled }"></logo-s-v-g>
       </router-link  >
 
       <div class="nav__menu">
-        <ul class="nav__list"  :class="{'nav__list--open' : isNavOpen}" >
+        <ul class="nav__list"  :class="{'nav__list--open' : isNavOpen, 'blur' : isNavOpen}" >
+
           <li class="nav__item"
               v-for="(route, index) in router().options.routes" :key="index">
             <router-link class="nav__link" :to="route.path" @click="closeNav"> {{ route.name}}</router-link>
           </li>
-          <li>
+          <li class="mt-3 mt-lg-0">
             <call-button></call-button>
           </li>
         </ul>
       </div>
 
-      <hamburger-menu  @click="openNav" class="menu__trigger"></hamburger-menu>
+      <hamburger-menu  @click="toggleNav" :is-nav-open="isNavOpen"  :is-scrolled="isScrolled" class="menu__trigger"></hamburger-menu>
     </nav>
   </header>
 </template>
@@ -31,29 +32,65 @@ import router from "@/router";
 export default {
   name: "HeaderComponent",
   components: {LogoSVG, CallButton, HamburgerMenu},
+  data() {
+    return {
+      isBlur: false,
+      isNavOpen: false,
+      isScrolled: false
+
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
   methods: {
     openNav(){
       console.log('click op de button')
       this.isNavOpen = !this.isNavOpen
+      this.isScrolled = false
+      document.body.classList.add('no-scroll'); // Add no-scroll class
+      this.handleScroll(); // Toggle isScrolled
     },
     closeNav() {
       this.isNavOpen = false;
+      this.isBlur = true
+      this.isScrolled = true
+      document.body.classList.remove('no-scroll'); // Remove no-scroll class
+      this.handleScroll(); // Toggle isScrolled
+
+    },
+
+    toggleNav() {
+      this.isNavOpen = !this.isNavOpen;
+
+      if (this.isNavOpen) {
+        document.body.classList.add('no-scroll');
+      } else {
+        document.body.classList.remove('no-scroll');
+      }
     },
     router() {
       return router
-    }
-  },
-  data() {
-    return {
-      isMenuOpen: false,
-      isBlur: true,
-      isNavOpen: false,
+    },
+    handleScroll() {
+      if (window.pageYOffset > 0) {
+        this.isScrolled = true;
+      } else {
+        this.isScrolled = false;
+      }
     }
   },
 }
 </script>
 
 <style scoped>
+
+.color__scroll{
+  fill: #192321;
+}
 /*global*/
 a {
   text-decoration: none;
@@ -67,6 +104,7 @@ header{
   top: 0;
 
   /*padding: 1.5rem 1.875rem 1rem;*/
+  transition: all 0.3s ease;
 }
 
 /*Nav*/
@@ -79,8 +117,8 @@ nav{
   align-items: center;
 }
 .nav__menu{
-  display: flex;
-  justify-content: center;
+  /*display: flex;*/
+  /*justify-content: center;*/
 }
 .nav__list{
   margin-bottom: 0;
@@ -114,7 +152,6 @@ nav{
 .blur{
   backdrop-filter: blur(24px);
   background-color: rgba(61, 149, 209, 0.4);
-
 }
 
 @media screen and (max-width: 1024px) {
@@ -147,14 +184,13 @@ nav{
     justify-content: flex-start;
     align-items: flex-start;
 
-    background-color: rgba(61, 149, 209, 0.8);
-    backdrop-filter: blur(24px);
 
     transition: transform .3s ease-out;
     transform: translateY(-100%);
   }
   .nav__list--open{
     transform: translateY(0);
+    padding-top: 5em;
   }
   .nav__item{
     font-size: 48px;

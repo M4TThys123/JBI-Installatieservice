@@ -1,11 +1,5 @@
 <template>
-<!--  <Header></Header>-->
-<!--  -->
-<!--  <HeaderComponent01></HeaderComponent01>-->
-<!--  <HeaderComponent02></HeaderComponent02>-->
-<!--  <header-component03></header-component03>-->
-  <HeaderComponent04></HeaderComponent04>
-
+  <Header></Header>
 
   <main class="content">
     <router-view class="views"/>
@@ -15,32 +9,16 @@
 </template>
 
 <script>
-// import Header from "@/lib/components/header/Header.vue";
+import Header from "@/lib/components/header/Header.vue";
 import Footer from "@/lib/components/footer/Footer.vue";
-
-// Header Iteraties
-// import HeaderComponent01 from "@/components/header/Header01.vue";
-// import HeaderComponent02 from "@/components/header/Header02.vue";
-// import HeaderComponent03 from "@/components/header/Header03.vue";
-import HeaderComponent04 from "@/lib/components/header/Header04.vue";
-
-
-
-
-
 export default {
   name: 'App',
   data() {
     return {
-      headerScroll: true,
     }
   },
   components: {
-    HeaderComponent04,
-    // HeaderComponent03,
-    // HeaderComponent02,
-    // HeaderComponent01,
-    // Header,
+    Header,
     Footer
   },
 }

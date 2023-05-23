@@ -33,10 +33,10 @@ export default {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
   }
   .hero__title{
-    font-size: 52px;
+    font-size: 35px;
   }
   .hero__paragraph{
-    font-size: 20px;
+    font-size: 18px;
   }
 
   /* SM (for tablets - screens ≥ than 768px wide) */
@@ -45,5 +45,18 @@ export default {
     .hero__title, .hero__paragraph{
       text-align: center;
     }
+
+    .hero__title{
+      font-size: 52px;
+    }
+    .hero__paragraph{
+      font-size: 20px;
+    }
+  }
+
+  /* LG (for laptops and desktops - screens ≥ than 1200px wide) */
+  @media (width >= 1200px) {
+    /* CSS rules for laptops and desktops go here */
+
   }
 </style>
