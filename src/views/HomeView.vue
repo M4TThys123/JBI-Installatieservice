@@ -1,20 +1,32 @@
 <template>
   <HomeHero></HomeHero>
 
-  <diensten-component01></diensten-component01>
+
+  <DienstenComponent></DienstenComponent>
+
+  <div class="row">
+    <ContactForm class="col-md-6"></ContactForm>
+    <ContactInformation cclass="col-md-6"></ContactInformation>
+  </div>
+
+
 </template>
 
 <script>
 import HomeHero from "@/lib/components/hero/HomeHero.vue";
-import DienstenComponent01 from "@/lib/components/diensten/DienstenComponent01.vue";
+import DienstenComponent from "@/lib/components/diensten/DienstenComponent.vue";
+import ContactForm from "@/lib/components/contact/ContactForm.vue";
+import ContactInformation from "@/lib/components/contact/ContactInformation.vue";
 
 
 
 export default {
   name: 'HomeView',
   components: {
-    DienstenComponent01,
+    ContactInformation,
+    ContactForm,
     HomeHero,
+    DienstenComponent,
   },
 
 }

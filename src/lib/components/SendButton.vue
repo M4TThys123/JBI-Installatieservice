@@ -1,5 +1,8 @@
 <template>
-  <button class="button-component" :style="{ background: backgroundColor }" @click="toggleLoading">
+  <button class="button-component"
+          :style="{ background: backgroundColor }"
+          @click="toggleLoading"
+          :class="{ 'loading': isLoading }">
     <svg class="button-icon"
          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
          v-show="!isLoading">
@@ -37,8 +40,11 @@ export default {
     }
   },
   methods: {
-    toggleLoading(){
-      this.isLoading = !this.isLoading
+    toggleLoading() {
+      this.isLoading = true;
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 2000); // Simulating a 2-second loading time
     }
   }
 }
@@ -50,12 +56,15 @@ export default {
   min-width: 100px;
   width: 140px;
   height: 42px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   transition: .5s ease-in-out;
+}
 
+.button-component.loading {
+  background-color: #CCCCCC;
+  cursor: not-allowed;
 }
 
 .button-icon {
@@ -69,3 +78,4 @@ export default {
   margin-left: .25em;
 }
 </style>
+s

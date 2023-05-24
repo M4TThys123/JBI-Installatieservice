@@ -103,6 +103,7 @@ export default {
   .hero-top {
     height: 100%;
     width: 100%;
+    min-width: 50vw;
   }
   .hero-bottom {
     height: 100%;

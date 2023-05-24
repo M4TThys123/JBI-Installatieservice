@@ -11,15 +11,13 @@
       </section>
       <section class="mb-3">
         <label for="email" class="form-label">
-          <strong> Email: </strong>
+          <strong>Email:</strong>
         </label>
         <input type="email" class="form-control" id="email" v-model="email" required>
       </section>
       <section class="mb-3">
         <label for="message" class="form-label">
-          <strong>
-            Bericht:
-          </strong>
+          <strong>Bericht:</strong>
         </label>
         <textarea class="form-control" id="message" v-model="message" required></textarea>
       </section>
@@ -28,10 +26,15 @@
         <span v-else>Send</span>
       </send-button>
     </form>
+
+    <div v-if="showSuccessMessage" class="success-message">
+      <p>Form submitted successfully!</p>
+    </div>
   </section>
 </template>
 
 <script>
+import Swal from 'sweetalert2';
 import SendButton from "@/lib/components/SendButton.vue";
 
 export default {
@@ -44,13 +47,10 @@ export default {
       message: "",
       isFormSubmitted: false,
       showSuccessMessage: false,
-      isLoading: false,
     };
   },
   methods: {
     onSubmit() {
-      // Code to handle form submission goes here
-
       // Disable send button and show loading spinner
       this.isFormSubmitted = true;
 
@@ -61,11 +61,23 @@ export default {
         this.email = "";
         this.message = "";
 
-        // Show success message
-        this.showSuccessMessage = true;
+        // Show success message using Swal
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Form submitted successfully!',
+        });
 
         // Enable send button and hide loading spinner
         this.isFormSubmitted = false;
+
+        // Show the success message div
+        this.showSuccessMessage = true;
+
+        // Hide the success message after 3 seconds
+        setTimeout(() => {
+          this.showSuccessMessage = false;
+        }, 3000);
       }, 2000); // Simulating a 2-second delay for demonstration purposes
     },
   },
