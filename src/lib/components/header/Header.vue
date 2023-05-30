@@ -1,17 +1,23 @@
 <template>
-  <header :class="{ 'blur': isScrolled }" >
+  <header :class="{ 'blur': isScrolled }">
     <nav>
       <router-link to="/" class="logo__link" @click="closeNav">
         <logo-s-v-g :class="{ 'color__scroll': isScrolled }"></logo-s-v-g>
-      </router-link  >
+      </router-link>
 
       <div class="nav__menu">
-        <ul class="nav__list"  :class="{'nav__list--open' : isNavOpen, 'blur' : isNavOpen}" >
-          <li class="nav__item"
-              v-for="(route, index) in router().options.routes" :key="index">
-            <router-link class="nav__link" :to="route.path" @click="closeNav"
-                         :class="{ 'text-color__scroll': isScrolled, 'text-color__nav-open': isNavOpen }">
-              {{ route.name}}
+        <ul class="nav__list" :class="{ 'nav__list--open': isNavOpen, 'blur': isNavOpen }">
+          <li class="nav__item" v-for="(route, index) in filteredRoutes" :key="index">
+            <router-link
+                class="nav__link"
+                :to="route.path"
+                @click="closeNav"
+                :class="{
+                'text-color__scroll': isScrolled,
+                'text-color__nav-open': isNavOpen
+              }"
+            >
+              {{ route.name }}
             </router-link>
           </li>
           <li class="mt-3 mt-lg-0">
@@ -20,10 +26,11 @@
         </ul>
       </div>
 
-      <hamburger-menu  @click="toggleNav" :is-nav-open="isNavOpen"  :is-scrolled="isScrolled" class="menu__trigger"></hamburger-menu>
+      <hamburger-menu @click="toggleNav" :is-nav-open="isNavOpen" :is-scrolled="isScrolled" class="menu__trigger"></hamburger-menu>
     </nav>
   </header>
 </template>
+
 
 <script>
 import LogoSVG from "@/lib/components/LogoSVG.vue";
@@ -33,13 +40,13 @@ import router from "@/router";
 
 export default {
   name: "HeaderComponent",
-  components: {LogoSVG, CallButton, HamburgerMenu},
+  components: { LogoSVG, CallButton, HamburgerMenu },
   data() {
     return {
       isBlur: false,
       isNavOpen: false,
       isScrolled: false
-    }
+    };
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
@@ -48,44 +55,43 @@ export default {
     window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
-    openNav(){
-      console.log('click op de button')
-      this.isNavOpen = !this.isNavOpen
-      this.isScrolled = false
-      document.body.classList.add('no-scroll'); // Add no-scroll class
-      this.handleScroll(); // Toggle isScrolled
-    },
-    closeNav() {
-      this.isNavOpen = false;
-      this.isBlur = true
-      this.isScrolled = true
-      document.body.classList.remove('no-scroll'); // Remove no-scroll class
-      this.handleScroll(); // Toggle isScrolled
+      openNav(){
+        console.log('click op de button')
+        this.isNavOpen = !this.isNavOpen
+        this.isScrolled = false
+        document.body.classList.add('no-scroll'); // Add no-scroll class
+        this.handleScroll(); // Toggle isScrolled
+      },
+      closeNav() {
+        this.isNavOpen = false;
+        this.isBlur = true
+        this.isScrolled = true
+        document.body.classList.remove('no-scroll'); // Remove no-scroll class
+        this.handleScroll(); // Toggle isScrolled
 
-    },
+      },
 
-    toggleNav() {
-      this.isNavOpen = !this.isNavOpen;
+      toggleNav() {
+        this.isNavOpen = !this.isNavOpen;
 
-      if (this.isNavOpen) {
-        document.body.classList.add('no-scroll');
-      } else {
-        document.body.classList.remove('no-scroll');
+        if (this.isNavOpen) {
+          document.body.classList.add('no-scroll');
+        } else {
+          document.body.classList.remove('no-scroll');
+        }
+      },
+      router() {
+        return router
       }
-    },
-    router() {
-      return router
-    },
-    handleScroll() {
-      if (window.pageYOffset > 0) {
-        this.isScrolled = true;
-      } else {
-        this.isScrolled = false;
-      }
-    }
   },
-}
+  computed: {
+    filteredRoutes() {
+      return router.options.routes.filter(route => !route.hide);
+    }
+  }
+};
 </script>
+
 
 <style scoped>
 
