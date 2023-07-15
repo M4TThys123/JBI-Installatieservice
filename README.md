@@ -1,5 +1,4 @@
 # webapplicatie
-## Inleiding
 Ik heb een website gemaakt voor JBI Installatieservice. Het betrof het ontwerp en de ontwikkeling van een complexe, gebruiksvriendelijke en interactieve webapplicatie. Voor deze opdracht heb ik gewerkt met een bestaande API of een zelf in te richten headless CMS als basis.
 
 * [👀 Analyseren](https://github.com/M4TThys123/SPRINT-18-Webapplicatie/wiki/%F0%9F%91%80-Analyseren)
