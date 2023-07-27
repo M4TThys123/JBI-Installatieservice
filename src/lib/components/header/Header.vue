@@ -26,7 +26,8 @@
         </ul>
       </div>
 
-      <hamburger-menu @click="toggleNav" :is-nav-open="isNavOpen" :is-scrolled="isScrolled" class="menu__trigger"></hamburger-menu>
+      <hamburger-menu @click="toggleNav" :is-nav-open="isNavOpen" :is-scrolled="isScrolled"
+                      class="menu__trigger"></hamburger-menu>
     </nav>
   </header>
 </template>
@@ -40,7 +41,7 @@ import router from "@/router";
 
 export default {
   name: "HeaderComponent",
-  components: { LogoSVG, CallButton, HamburgerMenu },
+  components: {LogoSVG, CallButton, HamburgerMenu},
   data() {
     return {
       isBlur: false,
@@ -55,34 +56,45 @@ export default {
     window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
-      openNav(){
-        console.log('click op de button')
-        this.isNavOpen = !this.isNavOpen
-        this.isScrolled = false
-        document.body.classList.add('no-scroll'); // Add no-scroll class
-        this.handleScroll(); // Toggle isScrolled
-      },
-      closeNav() {
-        this.isNavOpen = false;
-        this.isBlur = true
-        this.isScrolled = true
-        document.body.classList.remove('no-scroll'); // Remove no-scroll class
-        this.handleScroll(); // Toggle isScrolled
+    // Nav
+    openNav() {
+      console.log('click op de button')
+      this.isNavOpen = !this.isNavOpen
+      this.isScrolled = false
+      document.body.classList.add('no-scroll'); // Add no-scroll class
+      this.handleScroll(); // Toggle isScrolled
+    },
+    closeNav() {
+      this.isNavOpen = false;
+      this.isBlur = true
+      this.isScrolled = true
+      document.body.classList.remove('no-scroll'); // Remove no-scroll class
+      this.handleScroll(); // Toggle isScrolled
 
-      },
+    },
+    toggleNav() {
+      this.isNavOpen = !this.isNavOpen;
 
-      toggleNav() {
-        this.isNavOpen = !this.isNavOpen;
-
-        if (this.isNavOpen) {
-          document.body.classList.add('no-scroll');
-        } else {
-          document.body.classList.remove('no-scroll');
-        }
-      },
-      router() {
-        return router
+      if (this.isNavOpen) {
+        document.body.classList.add('no-scroll');
+      } else {
+        document.body.classList.remove('no-scroll');
       }
+    },
+
+    // Scroll
+    handleScroll() {
+      if (window.pageYOffset > 50) {
+        this.isScrolled = true;
+      } else {
+        this.isScrolled = false;
+      }
+    },
+
+    // Router
+    router() {
+      return router
+    }
   },
   computed: {
     filteredRoutes() {
@@ -95,15 +107,16 @@ export default {
 
 <style scoped>
 
-.color__scroll{
+.color__scroll {
   fill: #192321;
 }
+
 /*global*/
 a {
   text-decoration: none;
 }
 
-header{
+header {
   position: fixed;
   width: 100%;
   z-index: 999;
@@ -114,7 +127,7 @@ header{
 }
 
 /*Nav*/
-nav{
+nav {
   position: relative;
   height: 45px;
 
@@ -125,26 +138,30 @@ nav{
   max-width: 120rem;
   margin: auto;
 }
-.nav__menu{
+
+.nav__menu {
   /*display: flex;*/
   /*justify-content: center;*/
 }
-.nav__list{
+
+.nav__list {
   margin-bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.nav__item{
+
+.nav__item {
   margin-right: 2em;
 }
-.logo__link{
+
+.logo__link {
   z-index: 999999;
 }
 
-.nav__link{
+.nav__link {
   color: #FFFFFF;
-  transition:  .3s;
+  transition: .3s;
 
 }
 
@@ -153,34 +170,36 @@ nav{
   color: red;
 }
 
-.menu__trigger{
+.menu__trigger {
   display: none;
   z-index: 99999;
 }
 
 
-.blur{
+.blur {
   backdrop-filter: blur(24px);
   background-color: rgba(61, 149, 209, 0.4);
 }
 
 @media screen and (max-width: 1024px) {
-  .menu__trigger{
+  .menu__trigger {
     display: block;
   }
 
-  header{
+  header {
     padding: 0.75rem 1rem;
   }
 
   nav {
     height: 32px;
   }
-  .nav__menu{
+
+  .nav__menu {
     transition: .4s;
     margin-top: 2em;
   }
-  .nav__list{
+
+  .nav__list {
     position: fixed;
     top: 0;
     left: 0;
@@ -198,23 +217,28 @@ nav{
     transition: transform .3s ease-out;
     transform: translateY(-100%);
   }
-  .nav__list--open{
+
+  .nav__list--open {
     transform: translateY(0);
     padding-top: 5em;
   }
-  .nav__item{
+
+  .nav__item {
     font-size: 48px;
     font-weight: bold;
     font-family: Inter, sans-serif;
   }
 }
-.text-color__scroll{
+
+.text-color__scroll {
   color: #192321;
 }
-.text-color__nav-open{
+
+.text-color__nav-open {
   color: #FFFFFF;
 }
-.nav__list--open{
+
+.nav__list--open {
   visibility: visible;
 }
 
