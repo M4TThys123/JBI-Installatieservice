@@ -1,5 +1,5 @@
 <template>
-  <section class="contact-form__section">
+  <section class="contact-form__section col-md-5">
     <h2 class="mb-4">Direct contact opnemen</h2>
 
     <form @submit.prevent="onSubmit">

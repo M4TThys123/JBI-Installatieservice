@@ -1,27 +1,18 @@
 <template>
-  <view-hero03 :title="heroTitle" :paragraph="heroParagraph"></view-hero03>
+  <ViewHero :title="heroTitle" :paragraph="heroParagraph"></ViewHero>
 
-  <section class="container">
-    <contact-information class="mb-5"></contact-information>
-    <contact-form class="mb-5"></contact-form>
-  </section>
+  <ContactComponent></ContactComponent>
 </template>
 
-
 <script>
-
-
-
-import ViewHero03 from "@/lib/components/hero/ViewHero03.vue";
-import ContactInformation from "@/lib/components/contact/ContactInformation.vue";
-import ContactForm from "@/lib/components/contact/ContactForm.vue";
+import ContactComponent from "@/lib/components/contact/ContactComponent.vue";
+import ViewHero from "@/lib/components/hero/ViewHero.vue";
 
 export default {
   name: "ContactView",
   components: {
-    ContactForm,
-    ContactInformation,
-    ViewHero03,
+    ViewHero,
+    ContactComponent,
   },
   data() {
     return {

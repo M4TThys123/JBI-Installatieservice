@@ -28,12 +28,14 @@ export default {
   max-height: 240px;
 
   background-color: #3D95D1;
+  color: #FFFFFF;
 
   border-bottom: 8px solid #95C6FA;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
 }
 .hero__title{
   font-size: 35px;
+
 }
 .hero__paragraph{
   font-size: 18px;

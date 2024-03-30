@@ -1,5 +1,5 @@
 <template>
-  <section class="contact-info">
+  <section class="contact-info col-md-4">
     <h2 class="mb-4">J.B. Installatieservice</h2>
     <section class="contact-info__item row">
       <strong class="col-4 col-sm-3">Telefoon:</strong>

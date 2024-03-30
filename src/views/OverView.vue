@@ -1,5 +1,5 @@
 <template>
-  <ViewHero03 title="Over" paragraph="Installatiebedrijf gespecialiseerd in installatiewerk, service en onderhoud."></ViewHero03>
+  <ViewHero title="Over" paragraph="Installatiebedrijf gespecialiseerd in installatiewerk, service en onderhoud."></ViewHero>
   <div class="container">
 
     <!-- Hero section -->
@@ -71,11 +71,11 @@
 </template>
 
 <script>
-import ViewHero03 from "@/lib/components/hero/ViewHero03.vue";
+import ViewHero from "@/lib/components/hero/ViewHero.vue";
 
 export default {
   name: "OverView",
-  components: {ViewHero03}
+  components: {ViewHero}
 }
 </script>
 

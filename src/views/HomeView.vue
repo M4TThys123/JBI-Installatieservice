@@ -4,27 +4,20 @@
 
   <DienstenComponent></DienstenComponent>
 
-  <div class="row">
-    <ContactForm class="col-md-6"></ContactForm>
-    <ContactInformation cclass="col-md-6"></ContactInformation>
-  </div>
-
-
+  <ContactComponent></ContactComponent>
 </template>
 
 <script>
 import HomeHero from "@/lib/components/hero/HomeHero.vue";
 import DienstenComponent from "@/lib/components/diensten/DienstenComponent.vue";
-import ContactForm from "@/lib/components/contact/ContactForm.vue";
-import ContactInformation from "@/lib/components/contact/ContactInformation.vue";
+import ContactComponent from "@/lib/components/contact/ContactComponent.vue";
 
 
 
 export default {
   name: 'HomeView',
   components: {
-    ContactInformation,
-    ContactForm,
+    ContactComponent,
     HomeHero,
     DienstenComponent,
   },
