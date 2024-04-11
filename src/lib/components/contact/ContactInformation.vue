@@ -1,5 +1,5 @@
 <template>
-  <section class="contact-info col-md-4">
+  <section class="contact-info col-md-5">
     <h2 class="mb-4">J.B. Installatieservice</h2>
     <section class="contact-info__item row">
       <strong class="col-4 col-sm-3">Telefoon:</strong>
@@ -47,8 +47,16 @@ export default {
 }
 .contact-info__item {
   display: flex;
+  font-size: 24px;
+  /*font-size: 28px;*/
+  /*font-size: 32px;*/
+
+  gap: 2em;
+
+  /*justify-content: space-between;*/
 }
 .contact-info__item > p{
   text-decoration: underline #95C6FA 2px;
 }
+
 </style>

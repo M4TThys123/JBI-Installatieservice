@@ -1,7 +1,7 @@
 @@ -0,0 +1,46 @@
 <template>
-  <section class="container">
-    <h1 class="mt-5 mb-3">Onze diensten</h1>
+  <section class="container py-5">
+    <h1 class="mt-5 mb-4">Onze diensten</h1>
     <div class="row">
       <div class="col-md-4 mb-3" v-for="service in services" :key="service.id">
         <div class="card h-100">

@@ -7,7 +7,8 @@
           <call-button background="#3D95D1"></call-button>
         </section>
 
-        <section class="col-6 col-md-2 mt-3">
+        <div class="col-12 col-md-8 row justify-content-end">
+          <section class="col-6 col-md-3">
             <ul class="list-unstyled footer__link-list">
               <li>
                 <router-link to="/" class="footer__link-prm text-white">Home</router-link>
@@ -20,7 +21,7 @@
               </li>
             </ul>
           </section>
-        <section class="col-6 col-md-2">
+          <section class="col-6 col-md-3">
             <ul class="list-unstyled footer__link-list">
               <li>
                 <router-link to="/diensten" class="footer__link-prm text-white">Diensten</router-link>
@@ -39,7 +40,7 @@
               </li>
             </ul>
           </section>
-        <section class="col-6 col-md-2">
+          <section class="col-6 col-md-2">
             <ul class="list-unstyled footer__link-list">
               <li>
                 <router-link to="/contact" class="footer__link-prm text-white">Contact</router-link>
@@ -58,6 +59,8 @@
               </li>
             </ul>
           </section>
+        </div>
+
       </section>
 
       <hr class="my-4">

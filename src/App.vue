@@ -112,4 +112,7 @@ li {
 .content {
   flex: 1; /* Expand to fill remaining space */
 }
+main{
+  padding-bottom: 5em;
+}
 </style>

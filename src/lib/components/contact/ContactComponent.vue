@@ -1,6 +1,6 @@
 <template>
 <section class="contact-section container py-5">
-  <div class="row justify-content-center d-flex gap-5">
+  <div class="row d-flex gap-5 justify-content-between">
   <ContactForm></ContactForm>
   <ContactInformation></ContactInformation>
   </div>
