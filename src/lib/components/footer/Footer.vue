@@ -129,12 +129,15 @@ footer {
 
 .footer-nav{
   display: flex;
-  gap: 4em;
-  margin-top: 1.5em;
+  gap: 2em;
+  margin-top: 2.5em;
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
 }
 
 .footer__link-list {
   flex-direction: column;
+  /*flex: 1 1 100%; !* Each list takes up full width on smaller devices *!*/
+
 }
 
 .footer__link {
@@ -147,6 +150,9 @@ footer {
   margin-left: 2px;
 }
 
+hr{
+  border-bottom: 3px solid rgba(255, 255, 255, .1);
+}
 .footer__link-prm {
   font-weight: bold;
   font-size: 20px;
@@ -191,21 +197,13 @@ footer {
 
   .footer-nav{
     margin-top: 0;
+    flex-wrap: nowrap;
+    gap: 4em;
   }
 
   .footer-credits{
     text-align: right;
     margin: 0;
   }
-}
-
-/* MD (for small laptops - screens ≥ than 992px wide) */
-@media (width >= 992px) {
-
-}
-
-/* LG (for laptops and desktops - screens ≥ than 1200px wide) */
-@media (width >= 1200px) {
-
 }
 </style>
