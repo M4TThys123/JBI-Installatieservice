@@ -98,7 +98,7 @@ export default {
   },
   computed: {
     filteredRoutes() {
-      return router.options.routes.filter(route => !route.hide);
+      return router.options.routes.filter(route => !route.meta.hide);
     }
   }
 };

@@ -13,7 +13,7 @@ const routes = [
         name: 'Home',
         component: Home,
         meta: {
-            hide: false, // Show this route in the navigation
+            hide: true  , // Show this route in the navigation
         },
     },
     {
@@ -61,7 +61,7 @@ const routes = [
         name: 'Prismic Data',
         component: Prismic,
         meta: {
-            hide: false, // Show this route in the navigation
+            hide: true, // Show this route in the navigation
         },
     },
 ];
