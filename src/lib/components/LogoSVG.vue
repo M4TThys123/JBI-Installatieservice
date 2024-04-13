@@ -23,6 +23,7 @@ export default {
 <style scoped>
 .logo__svg{
   max-height: 32px;
+  width: 100%;
   fill: #FFFFFF;
   transition: all 0.4s ease;
 }

@@ -31,21 +31,34 @@ export default {
   scrollbar-width: none;
 }
 
-/* For Firefox */
 :root{
+  --color-dark: #14151A;
   --color-primary-blue: #0096D7;
   --color-secondary-blue: #BAC6FF;
   --color-border: #E5E5E6;
   --color-border-fill: #F9F9FB;
   --color-white: #FFFFFF;
+
+  --color-footer: var(--color-dark);
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /*font-family: Avenir, Helvetica, Arial, sans-serif;*/
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
 
+html{
+  background: #14539a;
+  scroll-behavior: smooth;
+}
+
+body{
+  background: var(--color-white);
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: #F7F8FC !important;
 }
 
 .no-scroll {
@@ -60,16 +73,6 @@ export default {
   width: 1px;
   height: 1px;
   overflow: hidden;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body{
-  max-width: 100vw;
-  overflow-x: hidden;
-  background: #F7F8FC !important;
 }
 
 img {
@@ -94,6 +97,7 @@ button {
 
 ul {
   display: flex;
+  margin-bottom: 0!important;
 }
 
 li {
@@ -114,5 +118,6 @@ li {
 }
 main{
   padding-bottom: 5em;
+  background: var(--color-white);
 }
 </style>
