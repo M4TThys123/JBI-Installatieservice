@@ -47,16 +47,19 @@ export default {
 }
 .contact-info__item {
   display: flex;
-  font-size: 24px;
-  /*font-size: 28px;*/
-  /*font-size: 32px;*/
-
   gap: 2em;
 
-  /*justify-content: space-between;*/
 }
 .contact-info__item > p{
   text-decoration: underline #95C6FA 2px;
 }
+
+/* LG (for laptops and desktops - screens ≥ than 1200px wide) */
+@media (width >= 1200px) {
+  .contact-info__item {
+    font-size: 24px;
+  }
+}
+
 
 </style>

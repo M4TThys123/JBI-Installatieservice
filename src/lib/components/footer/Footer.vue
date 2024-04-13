@@ -117,26 +117,20 @@ export default {
 </script>
 
 <style scoped>
-.text-white {
-  color: #fff;
-}
-
-.text-grey {
-  color: #9C9C9D;
-}
-
 footer {
   background: #14151A;
 }
 
 .footer-top{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
 }
 
 .footer-nav{
   display: flex;
   gap: 4em;
+  margin-top: 1.5em;
 }
 
 .footer__link-list {
@@ -179,10 +173,39 @@ footer {
 }
 
 .footer-credits {
- text-align: right;
+  margin-top: 2em;
+  color: #9C9C9D;
+
 }
 
 .footer-credits a {
   text-decoration: none;
+}
+
+/* SM (for tablets - screens ≥ than 768px wide) */
+@media (width >= 768px) {
+  .footer-top{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-nav{
+    margin-top: 0;
+  }
+
+  .footer-credits{
+    text-align: right;
+    margin: 0;
+  }
+}
+
+/* MD (for small laptops - screens ≥ than 992px wide) */
+@media (width >= 992px) {
+
+}
+
+/* LG (for laptops and desktops - screens ≥ than 1200px wide) */
+@media (width >= 1200px) {
+
 }
 </style>

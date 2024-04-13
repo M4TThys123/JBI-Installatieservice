@@ -120,4 +120,24 @@ main{
   padding-bottom: 5em;
   background: var(--color-white);
 }
+
+/* XS (for phones - screens < than 768px wide) */
+@media (width < 768px) {
+  /* CSS rules for phones go here */
+}
+
+/* SM (for tablets - screens ≥ than 768px wide) */
+@media (width >= 768px) {
+  /* CSS rules for tablets go here */
+}
+
+/* MD (for small laptops - screens ≥ than 992px wide) */
+@media (width >= 992px) {
+  /* CSS rules for small laptops go here */
+}
+
+/* LG (for laptops and desktops - screens ≥ than 1200px wide) */
+@media (width >= 1200px) {
+  /* CSS rules for laptops and desktops go here */
+}
 </style>
